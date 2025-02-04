@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:src"
     Shell.FlyoutBehavior="Disabled"
     BackgroundColor="#151515"
-    Shell.TitleColor="#6BBDFF"
+    Shell.TitleColor="#79c8ff"
     Title="src">
 
     <ShellContent

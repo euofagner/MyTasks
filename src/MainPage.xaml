@@ -2,15 +2,15 @@
 <ContentPage
     x:Class="src.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="#151515">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <Grid
+        BackgroundColor="#151515"
         Padding="10"
         ColumnDefinitions=".75*, .25*"
         ColumnSpacing="10"
         RowDefinitions="Auto, Auto, *"
-        RowSpacing="10">
+        RowSpacing="20">
 
         <Image
             Grid.ColumnSpan="2"
@@ -22,12 +22,18 @@
             x:Name="taskEntry"
             Grid.Row="1"
             FontAttributes="Bold"
-            FontSize="17"
-            Placeholder="Enter task" />
+            FontSize="19"
+            Placeholder="Enter task"
+            PlaceholderColor="#736F72"
+            TextColor="White" />
 
         <Button
+            CornerRadius="20"
             Grid.Row="1"
             Grid.Column="1"
+            TextColor="Wheat"
+            FontSize="16"
+            BackgroundColor="#2282ff"
             Clicked="Button_Clicked"
             FontAttributes="Bold"
             Text="Add" />
@@ -36,8 +42,9 @@
             <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Maçãs</x:String>
-                    <x:String>Banans</x:String>
+                    <x:String>Bananas</x:String>
                     <x:String>Laranjas</x:String>
+                    <x:String>Mangas</x:String>
                 </x:Array>
             </CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
@@ -49,8 +56,12 @@
                             </SwipeItems>
                         </SwipeView.RightItems>
                         <Grid Padding="0,5">
-                            <Frame>
-                                <Label FontSize="Large" Text="{Binding .}" />
+                            <Frame BackgroundColor="#2385ff" BorderColor="Transparent">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    Text="{Binding .}"
+                                    TextColor="White" />
                             </Frame>
                         </Grid>
                     </SwipeView>
