@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using src.ViewModels;
 
 namespace src
 {
@@ -18,6 +19,9 @@ namespace src
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainViewModel>();
 
             return builder.Build();
         }

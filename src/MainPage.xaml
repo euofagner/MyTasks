@@ -34,38 +34,44 @@
             Grid.Row="1"
             Grid.Column="1"
             BackgroundColor="#2282ff"
-            Clicked="Button_Clicked"
+            Command="{Binding AddCommand}"
             CornerRadius="20"
             FontAttributes="Bold"
             FontSize="16"
             Text="Add"
             TextColor="Wheat" />
 
-        <CollectionView Grid.Row="2" Grid.ColumnSpan="2">
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Maçãs</x:String>
-                    <x:String>Bananas</x:String>
-                    <x:String>Laranjas</x:String>
-                    <x:String>Mangas</x:String>
-                </x:Array>
-            </CollectionView.ItemsSource>
+        <CollectionView
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding Items}">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="{x:Type x:String}">
                     <SwipeView>
                         <SwipeView.RightItems>
                             <SwipeItems>
-                                <SwipeItem BackgroundColor="Red" Text="Delete" />
+                                <SwipeItem
+                                    BackgroundColor="Red"
+                                    Command="{Binding Source=
+                                             {RelativeSource AncestorType=
+                                             {x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
+                                    CommandParameter="{Binding .}"
+                                    Text="Delete" />
                             </SwipeItems>
                         </SwipeView.RightItems>
                         <Grid Padding="0,5">
-                            <Frame BackgroundColor="#2385ff" BorderColor="Transparent">
+                            <Border BackgroundColor="#2385ff" HeightRequest="80">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="15" />
+                                </Border.StrokeShape>
                                 <Label
+                                    Padding="20"
                                     FontAttributes="Bold"
                                     FontSize="Large"
                                     Text="{Binding .}"
-                                    TextColor="White" />
-                            </Frame>
+                                    TextColor="White"
+                                    VerticalTextAlignment="Center" />
+                            </Border>
                         </Grid>
                     </SwipeView>
                 </DataTemplate>

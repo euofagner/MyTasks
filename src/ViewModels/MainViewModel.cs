@@ -6,15 +6,33 @@ namespace src.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
+    [ObservableProperty]
     ObservableCollection<string>? items;
 
     [ObservableProperty]
     string? text;
 
-    [RelayCommand]
-    void  Add()
+    public MainViewModel()
     {
+        Items = [];
+    }
+
+    [RelayCommand]
+    void Add()
+    {
+        if (!string.IsNullOrWhiteSpace(Text))
+            Items.Add(Text);
+
         //add our item
         Text = string.Empty;
+    }
+
+    [RelayCommand]
+    void Delete(string s)
+    {
+        if (Items.Contains(s))
+        {
+            Items.Remove(s);
+        }
     }
 }
