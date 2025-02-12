@@ -23,7 +23,7 @@ public partial class MainViewModel : ObservableObject
         if (!string.IsNullOrWhiteSpace(Text))
             Items.Add(Text);
 
-        //add our item
+        //add an item
         Text = string.Empty;
     }
 
