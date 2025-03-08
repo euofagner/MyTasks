@@ -12,4 +12,4 @@ A simple to-do list app built with .NET MAUI that lets you add tasks, view them 
 - **Responsive interface**: Adaptive layout for different screen sizes.
 
 ## Connect with Me 🌐
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](linkedin.com/in/fagner-da-silva-43950b260)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fagner-da-silva-43950b260/)
