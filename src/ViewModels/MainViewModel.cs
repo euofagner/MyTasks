@@ -18,7 +18,7 @@ public partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand]
-    void Add()
+    public void Add()
     {
         if (!string.IsNullOrWhiteSpace(Text))
             Items.Add(Text);
@@ -28,11 +28,17 @@ public partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand]
-    void Delete(string s)
+    public void Delete(string s)
     {
         if (Items.Contains(s))
         {
             Items.Remove(s);
         }
+    }
+
+    [RelayCommand]
+    public async Task Tap(string s)
+    {
+        await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={s}");
     }
 }
