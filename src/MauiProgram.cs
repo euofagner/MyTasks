@@ -20,6 +20,8 @@ namespace src
     		builder.Logging.AddDebug();
 #endif
 
+
+
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainViewModel>();
 
