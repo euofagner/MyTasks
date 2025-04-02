@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 namespace src.ViewModels;
 
@@ -24,14 +23,14 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     public async Task Add()
     {
-        if (!string.IsNullOrWhiteSpace(Text))
-            Items.Add(Text);
-
         if (connectivity.NetworkAccess != NetworkAccess.Internet)
-        {  
-            await Shell.Current.DisplayAlert("No internet", "You are not conected", "Ok");
+        {
+            await Shell.Current.DisplayAlert("Error", "No internet connectivity", "Ok");
             return;
         }
+
+        if (!string.IsNullOrWhiteSpace(Text))
+            Items.Add(Text);
 
         //add an item
         Text = string.Empty;
